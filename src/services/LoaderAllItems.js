@@ -1,16 +1,14 @@
+// src/services/LoaderAllItems.js
 import axios from 'axios';
 
-const LoaderAllItems = async (detail, link) => {
+const LoaderAllItems = async (setDetail, url) => {
     try {
-        const url = (`http://localhost:3001/users/list`)
-        const res = await axios.get(url)
-        detail(res.data.body)
-        
+        const res = await axios.get(url);
+        setDetail(res.data.message);
     } catch (error) {
-        console.error(error);
-        detail('null');
+        console.error("Error al cargar datos:", error);
+        setDetail('No se pudo cargar la información');
     }
-    return detail
-}
+};
 
-export default LoaderAllItems
+export default LoaderAllItems;

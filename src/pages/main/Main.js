@@ -1,26 +1,25 @@
-import TableMain from "./components/TableMain";
-import { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom"
+// src/pages/Main.js
+import React, { useEffect, useState } from "react";
+import ImageDisplay from "../../components/ImageDisplay";
 import LoaderAllItems from "../../services/LoaderAllItems";
 
 const Main = () => {
+    const url = "https://dog.ceo/api/breeds/image/random";
+    const [cleanDataDetail, setCleanDataDetail] = useState("");
 
-    const params = useParams()
-    const url = `http://localhost:3001/brakes`
-    const id = params.id
-    const [cleanDataDetail, setcleanDataDetail] = useState([])
-      
     useEffect(() => {
-        LoaderAllItems(setcleanDataDetail, url, id)
-    }, [id, url, setcleanDataDetail])
-
+        const loadItems = async () => {
+            await LoaderAllItems(setCleanDataDetail, url);
+        };
+        loadItems();
+    }, []);
 
     return (
         <div>
             <h1>Interfaz SBS</h1>
-            <TableMain data={cleanDataDetail}/>
+            <ImageDisplay />
         </div>
-    )
-}
+    );
+};
 
 export default Main;

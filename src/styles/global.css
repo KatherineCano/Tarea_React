@@ -1,0 +1,42 @@
+/* src/styles/global.css */
+
+.app-wrapper {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+.header-banner {
+    background-color: #2196F3;
+    color: white;
+    padding: 20px;
+}
+
+.navigate-button {
+    padding: 10px 20px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ip-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.footer-info {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
